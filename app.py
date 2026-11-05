@@ -41,7 +41,7 @@ def compile_java():
     capture_output=True,
     text=True
 )
-        )
+        
 
         if result.returncode != 0:
             st.error("Java compilation failed.")
