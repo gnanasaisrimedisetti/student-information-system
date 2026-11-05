@@ -1,0 +1,32 @@
+
+name: Java Backend Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Compile Java Backend
+        run: |
+          javac -encoding UTF-8 backend/StudentSystem.java
+
+      - name: Check Python syntax
+        run: |
+          python -m py_compile app.py
+          
