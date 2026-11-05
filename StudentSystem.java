@@ -7,7 +7,7 @@ import java.util.Base64;
 
 public class StudentSystem {
 
-    private static final String FILE = "backend/students.csv";
+    private static final String FILE = "students.csv";
 
     public static void main(String[] args) {
         try {
