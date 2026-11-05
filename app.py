@@ -16,10 +16,9 @@ st.set_page_config(
 )
 
 BASE_DIR = Path(__file__).resolve().parent
-BACKEND_DIR = BASE_DIR / "backend"
-JAVA_FILE = BACKEND_DIR / "StudentSystem.java"
-CSV_FILE = BACKEND_DIR / "students.csv"
-
+BACKEND_DIR = BASE_DIR
+JAVA_FILE = BASE_DIR / "StudentSystem.java"
+CSV_FILE = BASE_DIR / "Students.csv"
 # ---------------- JAVA COMPILATION ----------------
 
 def compile_java():
