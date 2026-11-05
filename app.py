@@ -35,11 +35,12 @@ def compile_java():
         not class_file.exists()
         or class_file.stat().st_mtime < JAVA_FILE.stat().st_mtime
     ):
-        result = subprocess.run(
-            [javac, "-encoding", "UTF-8", str(JAVA_FILE)],
-            cwd=BASE_DIR,
-            capture_output=True,
-            text=True
+       result = subprocess.run(
+    [javac, "--release", "21", "-encoding", "UTF-8", str(JAVA_FILE)],
+    cwd=BASE_DIR,
+    capture_output=True,
+    text=True
+)
         )
 
         if result.returncode != 0:
